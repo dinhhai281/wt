@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MainComponent should match snapshot 1`] = `
+<div
+  id="root0"
+>
+  <div
+    data-testid="test-hello"
+  >
+    Hello World
+  </div>
+</div>
+`;
