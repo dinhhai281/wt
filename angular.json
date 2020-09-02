@@ -81,11 +81,11 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-eslint/builder:lint",
           "options": {
-            "tsConfig": [
-              "tsconfig.app.json",
-              "tsconfig.spec.json"
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.component.html"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -93,6 +93,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "angular-unit-test"
 }

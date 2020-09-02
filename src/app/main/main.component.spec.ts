@@ -1,4 +1,3 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { render, RenderResult } from '@testing-library/angular';
 
 import { MainComponent } from './main.component';
@@ -17,6 +16,6 @@ describe('MainComponent', () => {
 
   it('should render correctly', () => {
     const { getByTestId } = component;
-    expect(getByTestId('test-hello').innerHTML).toEqual('Hello World');
+    expect(getByTestId('test-hello').textContent).toEqual('Hello World');
   });
 });

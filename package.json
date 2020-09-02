@@ -2,13 +2,11 @@
   "name": "angular-unit-test",
   "version": "0.0.0",
   "scripts": {
-    "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "test": "jest --verbose",
     "test:coverage": "jest --coverage",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
+    "lint": "ng lint"
   },
   "private": true,
   "dependencies": {
@@ -26,16 +24,28 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.1000.8",
+    "@angular-eslint/builder": "0.2.0-beta.1",
+    "@angular-eslint/eslint-plugin": "0.2.0-beta.1",
+    "@angular-eslint/eslint-plugin-template": "0.2.0-beta.1",
+    "@angular-eslint/schematics": "^0.2.0-beta.1",
+    "@angular-eslint/template-parser": "0.2.0-beta.1",
     "@angular/cli": "~10.0.8",
     "@angular/compiler-cli": "~10.0.14",
     "@testing-library/angular": "^10.0.2",
     "@types/jest": "^26.0.12",
     "@types/node": "^12.11.1",
+    "@typescript-eslint/eslint-plugin": "4.0.1",
+    "@typescript-eslint/parser": "4.0.1",
     "codelyzer": "^6.0.0",
+    "eslint": "^7.6.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-jest": "^23.20.0",
+    "eslint-plugin-prettier": "^3.1.4",
     "jest": "^26.4.2",
     "jest-preset-angular": "^8.3.1",
+    "prettier": "^2.1.1",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
-    "typescript": "~3.9.5"
+    "typescript": "~3.9.7"
   }
 }
