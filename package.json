@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "start": "ng serve",
-    "build": "NODE_ENV=production ng build --prod",
+    "build": "NODE_ENV=production ng build --prod=true",
     "test": "jest --verbose",
     "test:coverage": "jest --coverage",
     "lint": "ng lint"
@@ -18,6 +18,10 @@
     "@angular/platform-browser": "^10.1.0",
     "@angular/platform-browser-dynamic": "^10.1.0",
     "@angular/router": "^10.1.0",
+    "@ngrx/effects": "^10.0.0",
+    "@ngrx/entity": "^10.0.0",
+    "@ngrx/store": "^10.0.0",
+    "@ngrx/store-devtools": "^10.0.0",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.3"

@@ -2,6 +2,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "allowJs": true,
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
@@ -17,5 +18,10 @@
       "ES2020",
       "dom"
     ],
+    "paths": {
+      "@environments/*": ["./src/environments/*"],
+      "@entity/*": ["./src/app/entities/*"],
+      "@app/*": ["./src/app/*"]
+    },
   }
 }

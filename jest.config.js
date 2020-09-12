@@ -2,6 +2,9 @@ module.exports = {
   name: 'angular-unit-test',
   preset: 'jest-preset-angular',
   setupFilesAfterEnv: ['<rootDir>/test-setup.ts'],
+  moduleNameMapper: {
+    '@entity/(.*)': '<rootDir>/src/app/entities/$1',
+  },
   globals: {
     'ts-jest': {
       tsConfig: '<rootDir>/tsconfig.spec.json',

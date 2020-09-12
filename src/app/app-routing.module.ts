@@ -5,7 +5,11 @@ import { MainComponent } from './main/main.component';
 const routes: Routes = [
   {
     path: 'gretting',
-    loadChildren: () => import('./features/gretting/gretting.module').then(m => m.GrettingModule),
+    loadChildren: () => import('./features/gretting').then(m => m.GrettingModule),
+  },
+  {
+    path: 'posts',
+    loadChildren: () => import('./features/posts').then(m => m.PostsModule),
   },
 ];
 

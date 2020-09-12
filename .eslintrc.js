@@ -1,10 +1,10 @@
 module.exports = {
   extends: [
     'plugin:@angular-eslint/recommended',
+    'plugin:jest/recommended',
+    'plugin:jest/style',
     'prettier/@typescript-eslint',
     'plugin:prettier/recommended',
-    'plugin:jest/recommended',
-    'plugin:jest/style'
   ],
   parserOptions: {
     project: './tsconfig.eslint.json',
@@ -19,7 +19,7 @@ module.exports = {
       'error',
       { type: 'element', prefix: 'app', style: 'kebab-case' },
     ],
-
+    '@angular-eslint/no-output-rename': 'off',
     quotes: ['error', 'single', { allowTemplateLiterals: true }],
   },
   overrides: [
