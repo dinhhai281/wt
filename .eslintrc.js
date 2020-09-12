@@ -33,7 +33,7 @@ module.exports = {
       plugins: ['@angular-eslint/template'],
       processor: '@angular-eslint/template/extract-inline-html',
       rules: {
-        '@typescript-eslint/no-unused-vars': 'error'
+        '@typescript-eslint/no-unused-vars': 'error',
       }
     },
     {

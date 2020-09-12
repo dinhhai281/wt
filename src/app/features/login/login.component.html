@@ -1,0 +1,3 @@
+<article class="min-h-screen flex flex-col justify-center items-center">
+  <app-login-form (submitForm)="doLogin$.next($event)" [loading]="isLoading$ | async"></app-login-form>
+</article>

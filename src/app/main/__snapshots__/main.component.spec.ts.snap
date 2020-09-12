@@ -4,10 +4,6 @@ exports[`MainComponent should match snapshot 1`] = `
 <div
   id="root0"
 >
-  <div
-    class="bg-gray-400 min-h-screen"
-  >
-    <router-outlet />
-  </div>
+  <router-outlet />
 </div>
 `;

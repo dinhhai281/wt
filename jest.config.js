@@ -3,7 +3,9 @@ module.exports = {
   preset: 'jest-preset-angular',
   setupFilesAfterEnv: ['<rootDir>/test-setup.ts'],
   moduleNameMapper: {
-    '@entity/(.*)': '<rootDir>/src/app/entities/$1',
+    '@store/(.*)': '<rootDir>/src/app/store/$1',
+    '@app/(.*)': '<rootDir>/src/app/$1',
+
   },
   globals: {
     'ts-jest': {

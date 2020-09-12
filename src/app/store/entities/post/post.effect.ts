@@ -11,8 +11,8 @@ export class PostEffects {
     this.action$.pipe(
       ofType(fetchPosts),
       mergeMapTo(this.postService.getAllPost()),
-      map(posts => loadPosts({ posts }))
-    )
+      map(posts => loadPosts({ posts })),
+    ),
   );
 
   constructor(private action$: Actions, private postService: PostService) {}

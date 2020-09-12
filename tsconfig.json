@@ -20,7 +20,7 @@
     ],
     "paths": {
       "@environments/*": ["./src/environments/*"],
-      "@entity/*": ["./src/app/entities/*"],
+      "@store/*": ["./src/app/store/*"],
       "@app/*": ["./src/app/*"]
     },
   }
