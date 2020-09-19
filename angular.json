@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-unit-test": {
+    "kb-clone": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -19,7 +19,7 @@
         "build": {
           "builder": "@angular-builders/custom-webpack:browser",
           "options": {
-            "outputPath": "dist/angular-unit-test",
+            "outputPath": "dist/kb-clone",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -71,21 +71,21 @@
         "serve": {
           "builder": "@angular-builders/custom-webpack:dev-server",
           "options": {
-            "browserTarget": "angular-unit-test:build",
+            "browserTarget": "kb-clone:build",
             "customWebpackConfig": {
               "path": "webpack.config.js"
             }
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular-unit-test:build:production"
+              "browserTarget": "kb-clone:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-unit-test:build"
+            "browserTarget": "kb-clone:build"
           }
         },
         "lint": {
@@ -103,5 +103,5 @@
       }
     }
   },
-  "defaultProject": "angular-unit-test"
+  "defaultProject": "kb-clone"
 }

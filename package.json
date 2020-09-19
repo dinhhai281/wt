@@ -1,5 +1,5 @@
 {
-  "name": "angular-unit-test",
+  "name": "kb-clone",
   "version": "0.0.0",
   "scripts": {
     "start": "ng serve",
@@ -23,6 +23,8 @@
     "@ngrx/entity": "^10.0.0",
     "@ngrx/store": "^10.0.0",
     "@ngrx/store-devtools": "^10.0.0",
+    "@types/ramda": "^0.27.17",
+    "ramda": "^0.27.1",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.3"

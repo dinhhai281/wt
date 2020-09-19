@@ -1,5 +1,5 @@
 module.exports = {
-  name: 'angular-unit-test',
+  name: 'kb-clone',
   preset: 'jest-preset-angular',
   setupFilesAfterEnv: ['<rootDir>/test-setup.ts'],
   moduleNameMapper: {

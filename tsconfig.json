@@ -23,5 +23,5 @@
       "@store/*": ["./src/app/store/*"],
       "@app/*": ["./src/app/*"]
     },
-  }
+  },
 }
