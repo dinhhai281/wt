@@ -11,14 +11,18 @@ const routes: Routes = [
     redirectTo: 'login',
   },
   {
+    path: 'login',
+    loadChildren: () => import('./features/login').then(m => m.LoginModule),
+    canActivate: [LoginGuard],
+  },
+  {
     path: 'posts',
     loadChildren: () => import('./features/posts').then(m => m.PostsModule),
     canActivate: [AuthGuard],
   },
   {
-    path: 'login',
-    loadChildren: () => import('./features/login').then(m => m.LoginModule),
-    canActivate: [LoginGuard],
+    path: 'board',
+    loadChildren: () => import('./features/board').then(m => m.BoardModule),
   },
 ];
 

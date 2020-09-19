@@ -20,6 +20,7 @@ module.exports = {
       { type: 'element', prefix: 'app', style: 'kebab-case' },
     ],
     '@angular-eslint/no-output-rename': 'off',
+    '@angular-eslint/no-input-rename': 'off',
     quotes: ['error', 'single', { allowTemplateLiterals: true }],
   },
   overrides: [

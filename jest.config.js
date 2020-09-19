@@ -7,6 +7,7 @@ module.exports = {
     '@app/(.*)': '<rootDir>/src/app/$1',
 
   },
+  transformIgnorePatterns: [ "/node_modules/(?!ngx-binding).+\\.js$"],
   globals: {
     'ts-jest': {
       tsConfig: '<rootDir>/tsconfig.spec.json',

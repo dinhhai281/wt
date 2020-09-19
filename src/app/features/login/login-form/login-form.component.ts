@@ -8,8 +8,9 @@ import {
 } from '@angular/core';
 import { Validators } from '@angular/forms';
 import { FormBuilder, FormControl, NgValidatorsErrors } from '@ngneat/reactive-forms';
-import { BehaviorSubject, combineLatest, Observable, Subject } from 'rxjs';
+import { combineLatest, Observable, Subject } from 'rxjs';
 import { filter, map, startWith, tap, withLatestFrom } from 'rxjs/operators';
+import { ObservableBinding } from 'ngx-binding';
 
 export interface LoginFormValue {
   email: string;
@@ -26,11 +27,9 @@ type NgError = Observable<Partial<NgValidatorsErrors>>;
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LoginFormComponent implements OnInit {
-  @Input()
-  set loading(value: boolean) {
-    this.loading$.next(value);
-  }
-  loading$ = new BehaviorSubject<boolean>(false);
+  @ObservableBinding()
+  @Input('loading')
+  loading$!: Observable<boolean>;
 
   form = this.fb.group<LoginFormValue, NgValidatorsErrors>({
     email: this.fb.control('', [Validators.required, Validators.email]),
