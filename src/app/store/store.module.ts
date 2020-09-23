@@ -4,8 +4,8 @@ import { environment } from '@environments/environment';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 
-import { AuthFeatureStoreModule } from './application/auth';
-import { PostFeatureStoreModule } from './entities/post';
+import { AuthFeatureStoreModule } from './auth';
+import { PostFeatureStoreModule } from './post';
 
 @NgModule({
   declarations: [],

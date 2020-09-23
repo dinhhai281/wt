@@ -3,6 +3,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { render, RenderResult } from '@testing-library/angular';
 
 import { LoginFormComponent } from './login-form.component';
+import { LoginFormStore } from './login-form.store';
 
 describe('LoginFormComponent', () => {
   let component: RenderResult<LoginFormComponent>;
@@ -10,6 +11,7 @@ describe('LoginFormComponent', () => {
   beforeEach(async () => {
     component = await render(LoginFormComponent, {
       imports: [ReactiveFormsModule],
+      providers: [LoginFormStore],
     });
   });
 

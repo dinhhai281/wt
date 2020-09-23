@@ -1,6 +1,5 @@
-import { ActionReducerMap } from '@ngrx/store';
-import * as fromPost from '@store/entities/post';
-import * as fromAuth from '@store/application/auth';
+import * as fromPost from '@store/post';
+import * as fromAuth from '@store/auth';
 
 export interface State {
   [fromPost.POST_FEATURE_KEY]: fromPost.PostEntityState;

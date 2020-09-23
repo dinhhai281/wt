@@ -10,7 +10,8 @@ import { Validators } from '@angular/forms';
 import { FormBuilder, FormControl, NgValidatorsErrors } from '@ngneat/reactive-forms';
 import { combineLatest, Observable, Subject } from 'rxjs';
 import { filter, map, startWith, tap, withLatestFrom } from 'rxjs/operators';
-import { ObservableBinding } from 'ngx-binding';
+
+import { LoginFormStore } from './login-form.store';
 
 export interface LoginFormValue {
   email: string;
@@ -25,26 +26,25 @@ type NgError = Observable<Partial<NgValidatorsErrors>>;
   styleUrls: ['./login-form.component.scss'],
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
+  providers: [LoginFormStore],
 })
 export class LoginFormComponent implements OnInit {
-  @ObservableBinding()
-  @Input('loading')
-  loading$!: Observable<boolean>;
+  @Input()
+  set loading(value: boolean) {
+    this.state.setLoading(value);
+  }
 
   form = this.fb.group<LoginFormValue, NgValidatorsErrors>({
     email: this.fb.control('', [Validators.required, Validators.email]),
     password: this.fb.control(''),
   });
 
-  buttonColorClass$ = this.loading$.pipe(
-    map(isLoading => ({
-      'bg-indigo-400 hover:bg-indigo-500 text-gray-200': !isLoading,
-      'bg-gray-300 text-gray-600': isLoading,
+  vm$ = combineLatest([this.getControlErrors('email'), this.state.vm$]).pipe(
+    map(([emailError, { loading, buttonColorClass }]) => ({
+      emailError,
+      loading,
+      buttonColorClass,
     })),
-  );
-
-  vm$ = combineLatest([this.getControlErrors('email'), this.loading$, this.buttonColorClass$]).pipe(
-    map(([emailError, loading, buttonColorClass]) => ({ emailError, loading, buttonColorClass })),
   );
 
   submit$ = new Subject<void>();
@@ -65,5 +65,5 @@ export class LoginFormComponent implements OnInit {
 
   ngOnInit() {}
 
-  constructor(private readonly fb: FormBuilder) {}
+  constructor(private readonly fb: FormBuilder, private readonly state: LoginFormStore) {}
 }
