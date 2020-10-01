@@ -5,5 +5,5 @@
   "eslint.options": {
     "extensions": [".ts", ".html"]
   },
-  "typescript.tsdk": "node_modules/typescript/lib"
+  "typescript.tsdk": "/home/haidnguyen/projects/wt/node_modules/typescript/lib"
 }

@@ -13,16 +13,16 @@ export interface AuthState {
 }
 
 const initialState: AuthState = {
-  me: undefined,
-  token: undefined,
+  me: null,
+  token: null,
   loading: false,
-  error: undefined,
+  error: null,
 };
 
 const _authReducer = createReducer(
   initialState,
   on(login, state => ({ ...state, loading: true })),
-  on(loginSuccess, (state, { user, token }) => ({ ...state, loading: false, user, token })),
+  on(loginSuccess, (state, { user, token }) => ({ ...state, loading: false, me: user, token })),
   on(loginFailure, (state, { error }) => ({ ...state, loading: false, error })),
 );
 

@@ -1,5 +1,7 @@
 <nav>
-  <app-header></app-header>
+  <app-header [me]="me$ | async">
+    <span app-label>AV</span>
+  </app-header>
 </nav>
 
 <main>

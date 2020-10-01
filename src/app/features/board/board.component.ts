@@ -1,4 +1,6 @@
 import { Component, OnInit, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/core';
+import { select, Store } from '@ngrx/store';
+import { fromAuth } from '@store/reducers';
 
 @Component({
   selector: 'app-board',
@@ -8,7 +10,9 @@ import { Component, OnInit, ViewEncapsulation, ChangeDetectionStrategy } from '@
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class BoardComponent implements OnInit {
-  constructor() {}
+  me$ = this.store.pipe(select(fromAuth.selectMe));
 
   ngOnInit(): void {}
+
+  constructor(private store: Store) {}
 }

@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { ComponentStore } from '@ngrx/component-store';
-import { identity } from 'ramda';
 
 export interface LoginFormState {
   loading: boolean;

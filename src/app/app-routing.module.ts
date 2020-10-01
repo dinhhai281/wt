@@ -23,6 +23,7 @@ const routes: Routes = [
   {
     path: 'board',
     loadChildren: () => import('./features/board').then(m => m.BoardModule),
+    // canActivate: [AuthGuard],
   },
 ];
 

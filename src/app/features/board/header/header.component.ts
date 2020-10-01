@@ -1,4 +1,12 @@
-import { Component, OnInit, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ViewEncapsulation,
+  ChangeDetectionStrategy,
+  Input,
+} from '@angular/core';
+import { User } from '@app/models';
+import { HeaderStore } from './header.store';
 
 @Component({
   selector: 'app-header',
@@ -6,9 +14,15 @@ import { Component, OnInit, ViewEncapsulation, ChangeDetectionStrategy } from '@
   styleUrls: ['./header.component.scss'],
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
+  providers: [HeaderStore],
 })
 export class HeaderComponent implements OnInit {
-  constructor() {}
+  @Input()
+  set me(value: User) {
+    this.state.setMe(value);
+  }
 
-  ngOnInit(): void {}
+  ngOnInit() {}
+
+  constructor(public readonly state: HeaderStore) {}
 }
